@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Calculator</title>
+</head>
+<style>
+    body{
+        background: #000;
+        color:#fff;
+    }
+.grid-container{
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    margin: 10%;
+}
+.gird-item{
+    font-size: 30px;
+    background:rgb(63, 51, 51);
+    text-align: center;
+    padding:10px 20px 10px 20px;
+    margin:5px;
+    border-radius: 25px;
+}
+.gird-item:hover{
+    cursor: pointer;
+    background : rgb(113, 145, 24);
+    color:#fff;
+    box-shadow: 2px 2px 2px rgb(113, 145, 24);
+}
+.item{
+    grid-column: 4;
+    grid-row-start: 4;
+    grid-row-end:7;
+    padding-top: 70px;
+    border-radius: 30px;
+    background: rgb(17, 146, 17);
+}
+#input{
+    grid-column-start: 1;
+    grid-column-end: 5;
+    height: 40px;
+    background: #000;
+    color:#fff;
+    text-align:right;
+    font-size: 20px;
+    border:2px solid rgb(63, 51, 51);
+}
+</style>
+<body>
+
+        <center>
+            <div class="grid-container">
+                <input type="text" id="input" value=""  disabled>
+                <div class="gird-item" onclick="cls()">C</div>
+                <div class="gird-item" onclick="btn('*')">*</div>
+                <div class="gird-item" onclick="btn('/')">/</div>
+                <div class="gird-item" onclick="btn('%')">%</div>
+                <div class="gird-item" onclick="btn(1)">1</div>
+                <div class="gird-item" onclick="btn(2)">2</div>
+                <div class="gird-item" onclick="btn(3)">3</div>
+                <div class="gird-item" onclick="btn('-')">-</div>
+                <div class="gird-item item" onclick="cal()">=</div>
+                <div class="gird-item" onclick="btn(4)">4</div>
+                <div class="gird-item" onclick="btn(5)">5</div>
+                <div class="gird-item" onclick="btn(6)">6</div>
+                <div class="gird-item" onclick="btn(7)">7</div>
+                <div class="gird-item" onclick="btn(8)">8</div>
+                <div class="gird-item" onclick="btn(9)">9</div>
+                <div class="gird-item" onclick="btn('+')">+</div>
+                <div class="gird-item" onclick="btn(0)">0</div>
+                <div class="gird-item" onclick="btn('.')">.</div>
+
+            </div>
+        </center>
+            <script>
+                var display = document.getElementById("input");
+                function btn(data){
+                    display.value = display.value + data;
+                }
+                function cal(){
+                    display.value = eval(display.value);
+                }
+                function cls(){
+                    display.value = "";
+                }
+
+            </script>
+
+</body>
+</html>
